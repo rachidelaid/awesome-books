@@ -13,7 +13,7 @@ function addBook(book) {
 
 function removeBook(book) {
   booksList = booksList.filter((currentBook) => {
-    return currentBook.title != book.title;
+    return currentBook.title !== book.title;
   });
 
   localStorage.setItem('booksList', JSON.stringify(booksList));
@@ -49,12 +49,14 @@ renderBooks();
 formElm.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  const title = formElm['title'].value.trim();
-  const author = formElm['author'].value.trim();
+  const title = formElm.title.value.trim();
+  const author = formElm.author.value.trim();
 
-  formElm['title'].value = '';
-  formElm['author'].value = '';
+  formElm.title.value = '';
+  formElm.author.value = '';
 
   addBook({ title, author });
   renderBooks();
+
+  return false;
 });
