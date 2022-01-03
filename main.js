@@ -12,9 +12,9 @@ function addBook(book) {
 }
 
 function removeBook(book) {
-  booksList = booksList.filter((currentBook) => {
-    return currentBook.title !== book.title;
-  });
+  booksList = booksList.filter(
+    (currentBook) => currentBook.title !== book.title
+  );
 
   localStorage.setItem('booksList', JSON.stringify(booksList));
 }
