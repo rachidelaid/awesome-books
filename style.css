@@ -11,6 +11,13 @@ html {
   list-style: none;
 }
 
+a,
+a:hover,
+a:visited {
+  text-decoration: none;
+  color: unset;
+}
+
 :root {
   --bg-black: rgb(15, 15, 15);
   --bg-gray: rgb(46, 46, 46);
@@ -18,15 +25,42 @@ html {
 
 body {
   font-family: 'Comic Neue', cursive;
-  padding: 20px;
+  padding: 20px 10px;
   background-color: var(--bg-black);
   color: #fff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 3px solid #fff;
+}
+
+header h1 {
+  font-size: 22px;
+}
+
+.links {
+  display: flex;
+  gap: 10px;
+}
+
+.links .active {
+  padding-bottom: 5px;
+  border-bottom: 2px solid #fff;
+}
+
+.links a:not(.active):hover {
+  border-bottom: 3px solid #fff;
 }
 
 .home {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 40px 0;
 }
 
 .books-list {
@@ -65,13 +99,13 @@ button:active {
 }
 
 .form-conatiner {
-  display: flex;
+  display: none; /*flex*/
   flex-direction: column;
   align-items: center;
 }
 
 form {
-  margin: 10px 0;
+  margin: 50px 0 20px 0;
   width: 50%;
 }
 
@@ -86,4 +120,20 @@ form input {
 
 .submit-btn {
   float: right;
+}
+
+.contact {
+  display: none; /*flex*/
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.contact p {
+  margin: 50px 0 20px 0;
+}
+
+.info li {
+  list-style: circle;
 }
