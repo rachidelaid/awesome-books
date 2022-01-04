@@ -1,8 +1,89 @@
-li {
-  list-style: none;
-  margin: 10px 0;
+html {
+  box-sizing: border-box;
 }
 
-p {
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  padding: 0;
   margin: 0;
+  list-style: none;
+}
+
+:root {
+  --bg-black: rgb(15, 15, 15);
+  --bg-gray: rgb(46, 46, 46);
+}
+
+body {
+  font-family: 'Comic Neue', cursive;
+  padding: 20px;
+  background-color: var(--bg-black);
+  color: #fff;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.books-list {
+  width: 100%;
+  border: 3px solid #fff;
+  margin: 20px 0;
+}
+
+.books-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.books-list li:nth-child(odd) {
+  background-color: var(--bg-gray);
+}
+
+button {
+  border: 3px solid #fff;
+  background-color: var(--bg-black);
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+.form-conatiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  margin: 10px 0;
+  width: 50%;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  border: 3px solid #fff;
+  background-color: var(--bg-gray);
+  color: #fff;
+  font-size: 18px;
+}
+
+.submit-btn {
+  float: right;
 }

@@ -1,43 +1,49 @@
 const listElm = document.querySelector('.books-list');
-const formElm = document.querySelector('.form form');
+const formElm = document.querySelector('form');
 
-let booksList = localStorage.getItem('booksList')
-  ? JSON.parse(localStorage.getItem('booksList'))
-  : [];
+class Books {
+  constructor() {
+    this.list = localStorage.getItem('booksList')
+      ? JSON.parse(localStorage.getItem('booksList'))
+      : [];
+  }
 
-function addBook(book) {
-  booksList.push(book);
+  add(book) {
+    this.list.push(book);
 
-  localStorage.setItem('booksList', JSON.stringify(booksList));
+    localStorage.setItem('booksList', JSON.stringify(this.list));
+  }
+
+  remove(title) {
+    this.list = this.list.filter((book) => book.title !== title);
+
+    localStorage.setItem('booksList', JSON.stringify(this.list));
+  }
 }
 
-function removeBook(book) {
-  booksList = booksList.filter((currentBook) => currentBook.title !== book.title);
-
-  localStorage.setItem('booksList', JSON.stringify(booksList));
-}
+const booksList = new Books();
 
 function renderBooks() {
   listElm.innerHTML = '';
 
-  booksList.forEach((book) => {
+  booksList.list.forEach((book) => {
     listElm.innerHTML += `
       <li>
-        <div>
-          <p>${book.title}</p>
-          <p>${book.author}</p>
-          <button>remove</button>
-        </div>
+        <p>"<span class="title">${book.title}</span>" ${book.author}</p> 
+        <button>remove</button>
       </li>
     `;
   });
 
   const removeBtns = document.querySelectorAll('li button');
-  removeBtns.forEach((btn, i) => {
+  removeBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
-      removeBook(booksList[i]);
+      const element = btn.parentNode;
+      const bookTitle = element.querySelector('.title').textContent;
 
-      btn.parentNode.parentNode.remove();
+      booksList.remove(bookTitle);
+
+      element.remove();
     });
   });
 }
@@ -53,7 +59,7 @@ formElm.addEventListener('submit', (e) => {
   formElm.title.value = '';
   formElm.author.value = '';
 
-  addBook({ title, author });
+  booksList.add({ title, author });
   renderBooks();
 
   return false;
