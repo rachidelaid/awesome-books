@@ -38,6 +38,12 @@ header {
   border: 3px solid #fff;
 }
 
+.date {
+  width: 100%;
+  margin: 15px 0;
+  text-align: right;
+}
+
 header h1 {
   font-size: 22px;
 }
