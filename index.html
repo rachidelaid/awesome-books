@@ -12,15 +12,27 @@
     />
     <link rel="stylesheet" href="style.css" />
     <script src="./main.js" defer></script>
+    <script src="./navigation.js" defer></script>
     <title>Awesome books</title>
   </head>
   <body>
-    <section class="home">
+    <header>
       <h1>Awesome books</h1>
+      <ul class="links">
+        <li><a id="home" href="#" class="active">List</a></li>
+        <li><a id="form-container" href="#">Add new</a></li>
+        <li><a id="contact" href="#">Contact</a></li>
+      </ul>
+    </header>
+
+    <p class="date"></p>
+
+    <section class="flex home">
+      <h2>All Awesome books</h2>
       <ul class="books-list"></ul>
     </section>
 
-    <section class="form-conatiner">
+    <section class="form-container">
       <h2>Add a new book</h2>
       <form>
         <input type="text" id="title" placeholder="Title" required /> <br />
@@ -31,6 +43,19 @@
           <button type="submit" class="submit-btn">Add</button>
         </div>
       </form>
+    </section>
+
+    <section class="contact">
+      <h2>Contact information</h2>
+      <p>
+        Do you have any questions or you just want to say "Hello"? <br />
+        You can reach out to us!
+      </p>
+      <ul>
+        <li class="info">Our e-mail: mail@mail.com</li>
+        <li class="info">Our phone number: 0043586534422</li>
+        <li class="info">Our address: Streetname 22, 84503 City, Country</li>
+      </ul>
     </section>
   </body>
 </html>
