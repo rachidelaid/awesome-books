@@ -1,7 +1,7 @@
 const listElm = document.querySelector('.books-list');
-const formElm = document.querySelector('.form form');
+const formElm = document.querySelector('form');
 
-class books {
+class Books {
   constructor() {
     this.list = localStorage.getItem('booksList')
       ? JSON.parse(localStorage.getItem('booksList'))
@@ -21,7 +21,7 @@ class books {
   }
 }
 
-const booksList = new books();
+const booksList = new Books();
 
 function renderBooks() {
   listElm.innerHTML = '';
@@ -29,15 +29,8 @@ function renderBooks() {
   booksList.list.forEach((book) => {
     listElm.innerHTML += `
       <li>
-        <div class='book_inner_container'>
-
-          <div class='book__info'>
-          <p class="title">"${book.title}"</p>
-          <p>${book.author}</p>
-          </div>
-         
-          <button>remove</button>
-        </div>
+        <p>"<span class="title">${book.title}</span>" ${book.author}</p> 
+        <button>remove</button>
       </li>
     `;
   });
@@ -45,7 +38,7 @@ function renderBooks() {
   const removeBtns = document.querySelectorAll('li button');
   removeBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
-      const element = btn.parentNode.parentNode;
+      const element = btn.parentNode;
       const bookTitle = element.querySelector('.title').textContent;
 
       booksList.remove(bookTitle);

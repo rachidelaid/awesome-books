@@ -8,95 +8,82 @@ html {
   box-sizing: inherit;
   padding: 0;
   margin: 0;
+  list-style: none;
+}
+
+:root {
+  --bg-black: rgb(15, 15, 15);
+  --bg-gray: rgb(46, 46, 46);
 }
 
 body {
   font-family: 'Comic Neue', cursive;
   padding: 20px;
+  background-color: var(--bg-black);
+  color: #fff;
 }
 
-li {
-  list-style: none;
-}
-
-main {
-  max-width: 1024px;
-  width: 80%;
-  margin: 0 auto;
-}
-main h1 {
-  text-align: center;
-  margin-bottom: 11px;
-}
-
-.main__book_container {
-  border: 2px solid #000;
-  border-radius: 8px;
-  padding: 15px 0px;
+.home {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  background-color: rgba(149, 149, 240, 0.8);
+  align-items: center;
 }
 
-.book_inner_container {
+.books-list {
+  width: 100%;
+  border: 3px solid #fff;
+  margin: 20px 0;
+}
+
+.books-list li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 7px 15px;
-}
-
-.book__info {
-  display: flex;
-  gap: 12px;
-}
-
-.list ul {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.books-list li:nth-child(even) {
-  background-color: rgba(118, 202, 235, 0.8);
+  padding: 10px;
+  font-size: 18px;
 }
 
 .books-list li:nth-child(odd) {
-  background-color: rgba(95, 150, 221, 0.7);
+  background-color: var(--bg-gray);
 }
 
 button {
-  padding: 8px 12px;
+  border: 3px solid #fff;
+  background-color: var(--bg-black);
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
 button:hover {
   transform: scale(1.1);
 }
 
-.form {
-  margin: 40px auto;
-  text-align: center;
+button:active {
+  transform: scale(0.9);
+}
+
+.form-conatiner {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-.button {
-  display: flex;
-  width: 85%;
-  justify-content: flex-end;
+form {
+  margin: 10px 0;
+  width: 50%;
 }
 
-.form h2 {
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-input[type='text'] {
+form input {
+  width: 100%;
   padding: 10px;
-  width: 70%;
-  font-family: 'Comic Neue', cursive;
+  border: 3px solid #fff;
+  background-color: var(--bg-gray);
+  color: #fff;
+  font-size: 18px;
 }
 
-input[type='text']:focus {
-  outline: none;
+.submit-btn {
+  float: right;
 }
