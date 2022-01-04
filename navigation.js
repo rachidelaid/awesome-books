@@ -1,6 +1,6 @@
 const timeParagraph = new Date();
-
 document.querySelector('.date').textContent = timeParagraph;
+
 const links = document.querySelectorAll('.links a');
 links.forEach((link) => {
   link.addEventListener('click', () => {
