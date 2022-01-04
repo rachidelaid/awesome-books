@@ -4,21 +4,37 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="./main.js" defer></script>
     <title>Awesome books</title>
   </head>
   <body>
-    <h1>Awesome books</h1>
-    <section class="list">
-      <ul class="books-list"></ul>
-    </section>
-    <section class="form">
-      <form>
-        <input type="text" id="title" placeholder="Title" required />
-        <input type="text" id="author" placeholder="Author" required />
-        <button type="submit">Add</button>
-      </form>
-    </section>
+    <main>
+      <h1>Awesome books</h1>
+      <section class="main__book_container">
+        <section class="list">
+          <ul class="books-list"></ul>
+        </section>
+      </section>
+
+      <section class="form">
+        <h2>Add a new book</h2>
+        <form>
+          <input type="text" id="title" placeholder="Title" required /> <br />
+          <br />
+          <input type="text" id="author" placeholder="Author" required /> <br />
+          <br />
+          <div class="button">
+            <button type="submit">Add</button>
+          </div>
+        </form>
+      </section>
+    </main>
   </body>
 </html>

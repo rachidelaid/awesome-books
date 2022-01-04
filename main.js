@@ -29,9 +29,13 @@ function renderBooks() {
   booksList.list.forEach((book) => {
     listElm.innerHTML += `
       <li>
-        <div>
-          <p class="title">${book.title}</p>
+        <div class='book_inner_container'>
+
+          <div class='book__info'>
+          <p class="title">"${book.title}"</p>
           <p>${book.author}</p>
+          </div>
+         
           <button>remove</button>
         </div>
       </li>
